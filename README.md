@@ -6,21 +6,27 @@ FunFact: This project has its own post build project which is used to install th
 
 The "post-build project" allows you to have a solution wide post build event and is used to move things from build targets to a readable, debuggable location that uses a well-known language. 
 
-The stuf in a project file: 
+The stuff in a project file: 
 
 `<Target Name="PostBuild" AfterTargets="PostBuildEvent">`
 
 is moved to 
 
-`void PostBuildEvent() {}`
+`void PostBuild() {}`
 
 To be precise, you have to move it yourself, the template only provides the location where you can move it.
 
 FunFact: You could use this template to create a pre build project too ;-) 
 
-What needs to be done?
+## What needs to be done?
 
 - create your solution with your projects as usual
 - create a post-build project using this template
+    - chose a project name e.g. "postbuild"  
+      *used for the project folder name, the project file itself will always be named `.postbuild.csproj`¹.*
+    - chose a framework target  
+      *.NET 6.0, 7.0, 8.0 are supported¹*
 - edit the project dependency/ project build order  
   so that .postbuild depends on all other projects
+
+¹) in general you can change it afterwards
