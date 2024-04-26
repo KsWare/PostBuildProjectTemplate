@@ -18,13 +18,13 @@ To be precise, you have to move it yourself, the template only provides the loca
 
 FunFact: You could use this template to create a pre build project too ;-) 
 
-## Install the a template
+## Install the template
 
 ### Methode A
 
-- Clone this repository
+- Clone this repository locally
 - build the solution  
-  the post-build will install the template
+  the post-build will install the template as `PostBuild Project (KsWare)`
 
 ### Methode B
 
