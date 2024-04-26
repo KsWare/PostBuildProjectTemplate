@@ -20,13 +20,18 @@ FunFact: You could use this template to create a pre build project too ;-)
 
 ## Install the template
 
-### Methode A
+### A) NuGet (TODO)
+
+- use nuget
+- ...TODO...
+
+### B) Clone
 
 - Clone this repository locally
 - build the solution  
   the post-build will install the template as `PostBuild Project (KsWare)`
 
-### Methode B
+### C) Copy
 
 - copy the files from [PostBuildProjectTemplate](https://github.com/KsWare/PostBuildProjectTemplate/tree/develop/src/PostBuildProjectTemplate) to a local folder
 - call `dotnet new install <your local folder> --force`
