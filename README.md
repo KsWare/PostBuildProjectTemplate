@@ -34,9 +34,10 @@ FunFact: You could use this template to create a pre build project too ;-)
 ## How is it used?
 
 - create your solution with your projects as usual
-- create a post-build project using this template
-    - chose a project name e.g. "postbuild"  
-      *this is used for the project folder name, the project file itself will always be named `.postbuild.csproj`¹.*
+- add a new project using the template `PostBuild Project (KsWare)`
+    - chose the project name e.g. "postbuild"  
+      *this is used for the project folder name,  
+      the project file itself will always be named `.postbuild.csproj`¹.*
     - chose a framework target  
       *.NET 6.0, 7.0, 8.0 are supported¹*
 - edit the project dependency/ project build order  
