@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "KsWare",
+  "classifications": [ "Console" ],
+  "identity": "PostBuildProjectTemplate",
+  "name": "PostBuild Project",
+  "shortName": "PostBuildProject",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "foo",
+  "sources": [
+    // force .postbuild.csproj as project name
+    {
+      "rename": {
+        "PostBuildProjectTemplate.csproj": ".postbuild.csproj"
+      }
+    }
+  ],
+  "primaryOutputs": [
+    {
+      "path": ".postbuild.csproj"
+    }
+  ],
+  "symbols": {
+    "Framework_": {
+      "displayName": "Framework",
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net6.0",
+          "description": ".NET 6.0 (Long Term Support)",
+          "displayName": ".NET 6.0 (Long Term Support)"
+        },
+        {
+          "choice": "net7.0",
+          "description": ".NET 7.0",
+          "displayName": ".NET 7.0"
+        },
+        {
+          "choice": "net8.0",
+          "description": ".NET 8.0 (Long Term Support)",
+          "displayName": ".NET 8.0 (Long Term Support)"
+        }
+      ],
+      "defaultValue": "net8.0",
+      "replaces": "net8.0",
+      "description": "The target version of the framework for your project."
+    },
+    "Namespace": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "PostBuildProjectNamespace",
+      "defaultValue": "PostBuild",
+      "description": "The namespace for the project."
+    }
+  }
+}

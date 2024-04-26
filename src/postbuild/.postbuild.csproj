@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <AssemblyName>.postbuild</AssemblyName>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+   
+    <Exec Command="dotnet new install ..\PostBuildProjectTemplate --force" />
+  </Target>
+
+  <ItemGroup>
+    <Folder Include="BuildTrigger\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\PostBuildProjectTemplate\Program.cs" Link="BuildTrigger\Program.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PostBuildProjectTemplate\.template.config\template.json" Link="BuildTrigger\template.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PostBuildProjectTemplate\PostBuildProjectTemplate.csproj" Link="BuildTrigger\PostBuildProjectTemplate.csproj">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
